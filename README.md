@@ -26,7 +26,8 @@ make run-idea
 - 自动从 `config/sources.json` 中读取 AI 和 Bio RSS 源。
 - 运行 `scripts/daily_report.py` 生成 `reports/YYYY-MM-DD.md`。
 - 运行 `scripts/strong_idea.py` 追加“强化 Idea 模块（实验设计 + 投稿匹配分）”，并输出结构化文件 `reports/ideas/YYYY-MM-DD.json`。
-- 运行 `scripts/send_email.py` 自动发邮件到指定收件箱。
+- 运行 `scripts/daily_project_package.py` 生成每日项目交付包（proposal/manuscript/handoff/READ_FIRST）。
+- 运行 `scripts/send_email.py` 自动发邮件到指定收件箱（含简要正文 + 附件）。
 - GitHub Actions 自动提交当天报告与结构化 idea 文件到仓库。
 
 ### 关键文件
@@ -34,6 +35,7 @@ make run-idea
 - 数据源配置：`config/sources.json`
 - 报告生成脚本：`scripts/daily_report.py`
 - 强化 idea 脚本：`scripts/strong_idea.py`
+- 项目交付包脚本：`scripts/daily_project_package.py`
 - 邮件发送脚本：`scripts/send_email.py`
 - Secrets 一键配置脚本：`scripts/setup_github_secrets.sh`
 - 输出目录：`reports/`
