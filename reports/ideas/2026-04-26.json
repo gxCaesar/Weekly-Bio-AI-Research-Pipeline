@@ -1,13 +1,15 @@
 {
-  "title": "多智能体协作驱动的单细胞机制发现自动化研究框架",
-  "hypothesis": "将多智能体协作用于单细胞机制发现，可显著提升假设生成质量与验证效率。",
+  "title": "多智能体协作驱动的基因组功能注释自动化研究框架",
+  "hypothesis": "将多智能体协作用于基因组功能注释，可显著提升假设生成质量与验证效率。",
   "ai_hits": [
     "agent",
     "reasoning"
   ],
   "bio_hits": [
-    "single-cell",
-    "drug"
+    "genomics",
+    "drug",
+    "rna",
+    "protein"
   ],
   "experiment_plan": [
     "数据：公开数据集 + 1个外部独立验证队列（避免过拟合）。",
@@ -24,22 +26,22 @@
   "submission_fit": [
     {
       "venue": "NeurIPS",
-      "score": 9.2,
+      "score": 9.4,
       "why": "方法创新+大规模实验"
     },
     {
       "venue": "Nature Biotechnology",
-      "score": 9.1,
+      "score": 9.3,
       "why": "转化医学与产业潜力"
     },
     {
       "venue": "Nature Methods",
-      "score": 9.0,
+      "score": 9.2,
       "why": "高生物学验证"
     },
     {
       "venue": "ICML",
-      "score": 8.9,
+      "score": 9.1,
       "why": "机器学习理论/泛化"
     }
   ]
