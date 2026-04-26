@@ -115,6 +115,20 @@ def main() -> None:
                 attach_file(msg, path)
                 attached_names.append(path.name)
 
+    if args.attach_files:
+        attach_file(msg, report_path)
+        attach_file(msg, idea_path)
+        for rel in [
+            "survey.md",
+            "proposal.md",
+            "venue_assessment.md",
+            "manuscript_draft.md",
+            "handoff.html",
+            "READ_FIRST.md",
+            "code_plan/README.md",
+        ]:
+            attach_file(msg, project_dir / rel)
+
     with smtplib.SMTP(args.smtp_host, args.smtp_port, timeout=30) as server:
         server.starttls()
         server.login(args.smtp_user, args.smtp_pass)
