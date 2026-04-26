@@ -1,4 +1,4 @@
-.PHONY: help setup-secrets run-daily run-idea run-email
+.PHONY: help setup-secrets run-daily run-idea run-email test
 
 help:
 	@echo "Available commands:"
@@ -22,3 +22,7 @@ run-email:
 	  --smtp-pass "$$GMAIL_SMTP_PASS" \
 	  --from-email "$$GMAIL_FROM_EMAIL" \
 	  --to-email "cgx510510@gmail.com"
+
+
+test:
+	python3 -m unittest discover -s tests -p "test_*.py" -v

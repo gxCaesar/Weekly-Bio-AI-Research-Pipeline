@@ -151,3 +151,25 @@ GMAIL_FROM_EMAIL='your@gmail.com' \
 - `GMAIL_SMTP_PASS (Gmail App Password):`（这一行是隐藏输入，不会回显）
 
 输入完成后按回车，看到 `[OK] Secrets configured...` 就表示成功。
+
+
+### Q4: 报错 `Resource not accessible by integration`
+这通常表示你当前 `gh` 登录身份是 **GitHub App/CI integration token**，没有管理仓库 Secrets 的权限。
+
+解决：
+1. 用个人账号重新登录：`gh auth login`
+2. 确认目标仓库：`gh repo view`
+3. 指定仓库重试：
+```bash
+GH_REPO=gxCaesar/Weekly-Bio-AI-Research-Pipeline ./scripts/setup_github_secrets.sh
+```
+4. 若仍失败，改用 PAT（classic）并确保至少有 `repo` scope。
+
+
+补充：如果在 Codespaces/云端开发环境里，先清理环境 token 再登录个人账号：
+```bash
+unset GITHUB_TOKEN GH_TOKEN
+gh auth logout -h github.com -u || true
+gh auth login
+GH_REPO=gxCaesar/Weekly-Bio-AI-Research-Pipeline ./scripts/setup_github_secrets.sh
+```
