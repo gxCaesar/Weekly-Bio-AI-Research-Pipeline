@@ -17,6 +17,7 @@ make help
 make setup-secrets
 make run-daily
 make run-idea
+make test
 ```
 
 
@@ -37,7 +38,7 @@ make run-idea
 - 邮件发送脚本：`scripts/send_email.py`
 - Secrets 一键配置脚本：`scripts/setup_github_secrets.sh`
 - 输出目录：`reports/`
-- `Makefile`（统一入口命令）
+- `Makefile`（统一入口命令，含 `make test`）
 
 ### 必要 Secrets（GitHub 仓库 Settings → Secrets and variables → Actions）
 - `GMAIL_SMTP_USER`: Gmail 登录账号（通常同发件邮箱）
@@ -113,3 +114,35 @@ python scripts/send_email.py \
 - `GMAIL_SMTP_PASS (Gmail App Password):`（这一行是隐藏输入，不会回显）
 
 输入完成后按回车，看到 `[OK] Secrets configured...` 就表示成功。
+
+
+### Secrets 设置报错（403 Resource not accessible by integration）
+- 说明当前 `gh` 身份没有仓库 Secrets 管理权限（常见于 GitHub App/CI token）。
+- 先执行 `gh auth login` 切到个人账号。
+- 再用仓库参数重试：`GH_REPO=gxCaesar/Weekly-Bio-AI-Research-Pipeline ./scripts/setup_github_secrets.sh`
+- 如果仍失败，请用 PAT（classic）并至少包含 `repo` scope。
+
+- 如果你在 Codespaces/CI 里看到提示 `The value of the GITHUB_TOKEN environment variable is being used for authentication`，先执行：
+  ```bash
+  unset GITHUB_TOKEN GH_TOKEN
+  gh auth logout -h github.com -u || true
+  gh auth login
+  ```
+  然后再执行：
+  ```bash
+  GH_REPO=gxCaesar/Weekly-Bio-AI-Research-Pipeline ./scripts/setup_github_secrets.sh
+  ```
+
+
+
+## Secrets 配置成功后（下一步）
+
+1. 在 GitHub 页面进入 **Actions**。  
+2. 打开 **Daily Bio+AI Research Report**。  
+3. 点击 **Run workflow** 先手动跑一次。  
+4. 运行完成后检查：
+   - `reports/YYYY-MM-DD.md` 是否生成；
+   - `reports/ideas/YYYY-MM-DD.json` 是否生成；
+   - `cgx510510@gmail.com` 是否收到邮件；
+   - Actions 日志里 `Send report email` 步骤是否成功。
+5. 若手动运行成功，就等待定时任务（每天北京时间 02:00）自动执行。
