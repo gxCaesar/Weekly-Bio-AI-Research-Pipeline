@@ -1,0 +1,14 @@
+{
+  "ai": [
+    {"name": "arXiv cs.AI", "type": "rss", "url": "https://export.arxiv.org/rss/cs.AI"},
+    {"name": "arXiv cs.CL", "type": "rss", "url": "https://export.arxiv.org/rss/cs.CL"},
+    {"name": "arXiv cs.LG", "type": "rss", "url": "https://export.arxiv.org/rss/cs.LG"},
+    {"name": "Nature Machine Learning", "type": "rss", "url": "https://www.nature.com/subjects/machine-learning.rss"}
+  ],
+  "bio": [
+    {"name": "Nature Bioinformatics", "type": "rss", "url": "https://www.nature.com/subjects/bioinformatics.rss"},
+    {"name": "Nature Drug Discovery", "type": "rss", "url": "https://www.nature.com/subjects/drug-discovery.rss"},
+    {"name": "Nature Genetics", "type": "rss", "url": "https://www.nature.com/subjects/genetics.rss"},
+    {"name": "Nature Single Cell Biology", "type": "rss", "url": "https://www.nature.com/subjects/single-cell-biology.rss"}
+  ]
+}
