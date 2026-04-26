@@ -1,0 +1,8 @@
+# Local deployed skills (from skill.zip)
+skills/
+
+# Generated pre-experiment runbooks
+reports/pre_experiment/
+
+# Temporary unzip folders
+.tmp/

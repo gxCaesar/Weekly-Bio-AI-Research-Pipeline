@@ -29,6 +29,10 @@ jobs:
       - name: Build enhanced idea module
         run: python scripts/strong_idea.py
 
+
+      - name: Build daily project package
+        run: python scripts/daily_project_package.py
+
       - name: Send report email
         env:
           SMTP_USER: ${{ secrets.GMAIL_SMTP_USER }}
@@ -43,13 +47,14 @@ jobs:
             --smtp-user "$SMTP_USER" \
             --smtp-pass "$SMTP_PASS" \
             --from-email "$FROM_EMAIL" \
-            --to-email "$REPORT_RECIPIENT"
+            --to-email "$REPORT_RECIPIENT" \
+            --attach-files
 
       - name: Commit and push report
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports/*.md reports/ideas/*.json
+          git add reports
           if git diff --cached --quiet; then
             echo "No report changes to commit"
             exit 0

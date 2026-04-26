@@ -26,7 +26,8 @@ make run-idea
 - 自动从 `config/sources.json` 中读取 AI 和 Bio RSS 源。
 - 运行 `scripts/daily_report.py` 生成 `reports/YYYY-MM-DD.md`。
 - 运行 `scripts/strong_idea.py` 追加“强化 Idea 模块（实验设计 + 投稿匹配分）”，并输出结构化文件 `reports/ideas/YYYY-MM-DD.json`。
-- 运行 `scripts/send_email.py` 自动发邮件到指定收件箱。
+- 运行 `scripts/daily_project_package.py` 生成每日项目交付包（proposal/manuscript/handoff/READ_FIRST）。
+- 运行 `scripts/send_email.py` 自动发邮件到指定收件箱（含简要正文 + 附件）。
 - GitHub Actions 自动提交当天报告与结构化 idea 文件到仓库。
 
 ### 关键文件
@@ -34,6 +35,7 @@ make run-idea
 - 数据源配置：`config/sources.json`
 - 报告生成脚本：`scripts/daily_report.py`
 - 强化 idea 脚本：`scripts/strong_idea.py`
+- 项目交付包脚本：`scripts/daily_project_package.py`
 - 邮件发送脚本：`scripts/send_email.py`
 - Secrets 一键配置脚本：`scripts/setup_github_secrets.sh`
 - 输出目录：`reports/`
@@ -113,3 +115,43 @@ python scripts/send_email.py \
 - `GMAIL_SMTP_PASS (Gmail App Password):`（这一行是隐藏输入，不会回显）
 
 输入完成后按回车，看到 `[OK] Secrets configured...` 就表示成功。
+
+## 科研 Skills 自动化部署（新增）
+
+### 1) 部署你上传的 `skill.zip`
+
+你可以直接手动部署（推荐一次性执行）：
+
+```bash
+bash ./scripts/deploy_research_skills.sh ./skill.zip
+```
+
+部署逻辑：
+- 解压到临时目录（自动清理）
+- 自动移除 `__MACOSX`、`.DS_Store`、skill 内 `.git`、`research_plan-workspace`
+- 将 9 个 skill **复制安装**到仓库内 `./skills/`（默认，适合 GitHub Codespaces 持续调用）
+
+### 2) Codespaces 推荐一条命令（先部署再跑流程）
+
+```bash
+make preexp-codespace
+```
+
+### 3) 生成“实验前全流程自动化”脚手架
+
+```bash
+PROJECT=virtual_cell_agent \
+DOMAIN='virtual cell + llm agent' \
+VENUE_TYPE=dual \
+TIME_BUDGET_WEEKS=8 \
+GPU_BUDGET='1x A100 80GB' \
+make run-preexp
+# 或 make run-preexp-config （按 YAML 配置）
+```
+
+输出目录：
+- `reports/pre_experiment/<date>-<project>/`
+
+流程文档：
+- `workflows/pre_experiment_pipeline.md`
+- `workflows/pre_experiment_config.example.yaml`
