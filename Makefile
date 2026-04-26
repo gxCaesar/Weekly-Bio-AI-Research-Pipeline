@@ -1,4 +1,4 @@
-.PHONY: help setup-secrets run-daily run-idea run-email
+.PHONY: help setup-secrets run-daily run-idea run-email deploy-skills run-preexp
 
 help:
 	@echo "Available commands:"
@@ -6,6 +6,8 @@ help:
 	@echo "  make run-daily       # 生成当日日报"
 	@echo "  make run-idea        # 生成强化 idea 模块"
 	@echo "  make run-email       # 发送当日报告到邮箱（需本地环境变量）"
+	@echo "  make deploy-skills  # 解压并部署 9 个科研 skill"
+	@echo "  make run-preexp     # 生成实验前自动化流程脚手架"
 
 setup-secrets:
 	./scripts/setup_github_secrets.sh
@@ -22,3 +24,10 @@ run-email:
 	  --smtp-pass "$$GMAIL_SMTP_PASS" \
 	  --from-email "$$GMAIL_FROM_EMAIL" \
 	  --to-email "cgx510510@gmail.com"
+
+
+deploy-skills:
+	bash ./scripts/deploy_research_skills.sh
+
+run-preexp:
+	bash ./scripts/run_pre_experiment_pipeline.sh

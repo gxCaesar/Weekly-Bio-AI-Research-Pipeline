@@ -1,0 +1,11 @@
+project: virtual_cell_agent
+domain: virtual cell + llm agent
+venue_type: dual          # conference | journal | dual
+time_budget_weeks: 8
+gpu_budget: 1x A100 80GB
+must_have_datasets:
+  - cellxgene
+  - pubchem
+  - clinvar
+novelty_gate_min: 3.5
+feasibility_gate: strict
