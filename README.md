@@ -113,3 +113,35 @@ python scripts/send_email.py \
 - `GMAIL_SMTP_PASS (Gmail App Password):`（这一行是隐藏输入，不会回显）
 
 输入完成后按回车，看到 `[OK] Secrets configured...` 就表示成功。
+
+## 科研 Skills 自动化部署（新增）
+
+### 1) 部署你上传的 `skill.zip`
+
+```bash
+make deploy-skills
+# 或 bash ./scripts/deploy_research_skills.sh ./skill.zip
+```
+
+默认会：
+- 解压到仓库临时目录 `.tmp/skill_unpack`
+- 自动清理 `__MACOSX`、`.DS_Store`、skill 内 `.git`、`research_plan-workspace`
+- 将 9 个 skill 链接到 `${CODEX_HOME:-$HOME/.codex}/skills`
+
+### 2) 生成“实验前全流程自动化”脚手架
+
+```bash
+PROJECT=virtual_cell_agent \
+DOMAIN='virtual cell + llm agent' \
+VENUE_TYPE=dual \
+TIME_BUDGET_WEEKS=8 \
+GPU_BUDGET='1x A100 80GB' \
+make run-preexp
+```
+
+输出目录：
+- `reports/pre_experiment/<date>-<project>/`
+
+流程文档：
+- `workflows/pre_experiment_pipeline.md`
+- `workflows/pre_experiment_config.example.yaml`
