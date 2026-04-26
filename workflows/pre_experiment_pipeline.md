@@ -7,7 +7,21 @@
 3. **Stage C / research_copilot**：将 top ideas 转为可执行研究方案。
 4. **Stage D / conference_plan 或 journal_plan**：按投稿目标生成 venue-specific 包。
 
-## 一键执行
+## 部署（先做）
+
+```bash
+bash ./scripts/deploy_research_skills.sh ./skill.zip
+# 默认安装到当前仓库 ./skills/
+```
+
+## 一键生成执行 Runbook
+
+Codespaces 推荐：
+```bash
+make preexp-codespace
+```
+
+### 方式 A：环境变量
 
 ```bash
 PROJECT=virtual_cell_agent \
@@ -18,16 +32,24 @@ GPU_BUDGET='1x A100 80GB' \
 ./scripts/run_pre_experiment_pipeline.sh
 ```
 
+### 方式 B：YAML 配置
+
+```bash
+./scripts/run_pre_experiment_pipeline.sh --config workflows/pre_experiment_config.example.yaml
+```
+
 ## 输出位置
 
 `reports/pre_experiment/<date>-<project>/`
 
 包含：
+- `RUNBOOK.md`（执行总入口）
 - `pipeline_context.md`
 - `stage_a_paper_reader.md`
 - `stage_b_idea_library.md`
 - `stage_c_research_copilot.md`
 - `stage_d_venue_specialization.md`
+- `execution_checklist.md`
 - `gate_report.md`
 
 ## 建议执行策略
