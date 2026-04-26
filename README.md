@@ -17,6 +17,7 @@ make help
 make setup-secrets
 make run-daily
 make run-idea
+make test
 ```
 
 
@@ -37,7 +38,7 @@ make run-idea
 - 邮件发送脚本：`scripts/send_email.py`
 - Secrets 一键配置脚本：`scripts/setup_github_secrets.sh`
 - 输出目录：`reports/`
-- `Makefile`（统一入口命令）
+- `Makefile`（统一入口命令，含 `make test`）
 
 ### 必要 Secrets（GitHub 仓库 Settings → Secrets and variables → Actions）
 - `GMAIL_SMTP_USER`: Gmail 登录账号（通常同发件邮箱）
