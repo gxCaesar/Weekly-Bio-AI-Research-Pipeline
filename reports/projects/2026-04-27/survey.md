@@ -1,0 +1,103 @@
+# 调研报告（2026-04-27）
+
+## 研究背景
+将多智能体协作用于基因组功能注释，可显著提升假设生成质量与验证效率。
+
+## 每日调研摘要
+请结合下方自动抓取报告继续补充：
+
+---
+
+# 每日 Bio+AI 自动调研报告（2026-04-27）
+
+> 此报告由 GitHub Actions 每天自动在云端生成。
+
+## AI / LLM / Agent 热点
+
+1. **Math Takes Two: A test for emergent mathematical reasoning in communication**
+   - 发布时间: Mon, 27 Apr 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2604.21935
+   - 摘要: arXiv:2604.21935v1 Announce Type: new 
+Abstract: Although language models demonstrate remarkable proficiency on mathematical benchmarks, it remains unclear whether this reflects true mathematical reasoning or statistical pattern matching over learning formal syntax. Most existing
+2. **An Artifact-based Agent Framework for Adaptive and Reproducible Medical Image Processing**
+   - 发布时间: Mon, 27 Apr 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2604.21936
+   - 摘要: arXiv:2604.21936v1 Announce Type: new 
+Abstract: Medical imaging research is increasingly shifting from controlled benchmark evaluation toward real-world clinical deployment. In such settings, applying analytical methods extends beyond model design to require dataset-aware workfl
+3. **MolClaw: An Autonomous Agent with Hierarchical Skills for Drug Molecule Evaluation, Screening, and Optimization**
+   - 发布时间: Mon, 27 Apr 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2604.21937
+   - 摘要: arXiv:2604.21937v1 Announce Type: new 
+Abstract: Computational drug discovery, particularly the complex workflows of drug molecule screening and optimization, requires orchestrating dozens of specialized tools in multi-step workflows, yet current AI agents struggle to maintain ro
+4. **Read the Paper, Write the Code: Agentic Reproduction of Social-Science Results**
+   - 发布时间: Mon, 27 Apr 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2604.21965
+   - 摘要: arXiv:2604.21965v1 Announce Type: new 
+Abstract: Recent work has used LLM agents to reproduce empirical social science results with access to both the data and code. We broaden this scope by asking: Can they reproduce results given only a paper's methods description and original 
+5. **Rethinking Publication: A Certification Framework for AI-Enabled Research**
+   - 发布时间: Mon, 27 Apr 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2604.22026
+   - 摘要: arXiv:2604.22026v1 Announce Type: new 
+Abstract: AI research pipelines now produce a growing share of publishable academic output, including work that meets existing peer-review standards for quality and novelty. Yet the publication system was built on the assumption of universal
+6. **Sound Agentic Science Requires Adversarial Experiments**
+   - 发布时间: Mon, 27 Apr 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2604.22080
+   - 摘要: arXiv:2604.22080v1 Announce Type: new 
+Abstract: LLM-based agents are rapidly being adopted for scientific data analysis, automating tasks once limited by human time and expertise. This capability is often framed as an acceleration of discovery, but it also accelerates a familiar
+
+## Bio / Bioinformatics 热点
+
+1. **When the genome learned its own vocabulary**
+   - 发布时间: Mon, 27 Apr 2026 00:00:00 +0000
+   - 链接: https://www.nature.com/articles/s41576-026-00966-y
+2. **In silico discovery of nanobody binders to a G-protein coupled receptor using AlphaFold-Multimer**
+   - 发布时间: Thu, 23 Apr 2026 00:00:00 +0000
+   - 链接: https://www.nature.com/articles/s41467-026-72093-5
+3. **Multiomics immune profiling of a patient-relevant orthotopic lung cancer model using SEPARATE-Seq**
+   - 发布时间: Thu, 23 Apr 2026 00:00:00 +0000
+   - 链接: https://www.nature.com/articles/s41467-026-72247-5
+4. **Benchmarking of shotgun sequencing depth reveals the potential and limitations of shallow metagenomics and strain-level analysis**
+   - 发布时间: Tue, 21 Apr 2026 00:00:00 +0000
+   - 链接: https://www.nature.com/articles/s41564-026-02334-2
+5. **Predicting RNA 3D structure and conformers using a pre-trained secondary structure model and structure-aware attention**
+   - 发布时间: Tue, 21 Apr 2026 00:00:00 +0000
+   - 链接: https://www.nature.com/articles/s42256-026-01223-x
+6. **Haloperidol induces neuroprotection and enhances neuromuscular function in both murine and human models of spinal muscular atrophy**
+   - 发布时间: Mon, 13 Apr 2026 00:00:00 +0000
+   - 链接: https://www.nature.com/articles/s12276-026-01689-0
+
+## 今日可执行 Idea
+
+- 建议方向：构建 agent 驱动的科研工作流，聚焦 genomics 场景，并用 reasoning 提升假设生成质量；短期可在公开 protein 数据上完成可复现实验基线。
+
+## 明日建议跟踪
+
+- 持续监控同主题 3 天内是否升温（重复出现 + 新增代码/数据）。
+- 如果某主题连续升温，自动进入立项池并补充实验计划。
+
+## 强化 Idea 模块（实验设计 + 投稿匹配分）
+
+### 题目
+- 多智能体协作驱动的基因组功能注释自动化研究框架
+
+### 核心假设
+- 将多智能体协作用于基因组功能注释，可显著提升假设生成质量与验证效率。
+
+### 实验设计（可执行）
+- 数据：公开数据集 + 1个外部独立验证队列（避免过拟合）。
+- 方法：主方法 vs 单Agent基线 vs 无推理链基线（至少3组对比）。
+- 评估：AUC/F1 + 新靶点命中率 + 人工专家一致性评分。
+- 消融：去除检索模块、去除反馈回路、去除多智能体协作。
+- 复现：固定随机种子、公开配置文件、输出误差条与显著性检验。
+
+### 投稿匹配分（10分制）
+- **NeurIPS**: 9.5 / 10（方法创新+大规模实验）
+- **Nature Biotechnology**: 9.5 / 10（转化医学与产业潜力）
+- **Nature Methods**: 9.4 / 10（高生物学验证）
+- **ICML**: 9.3 / 10（机器学习理论/泛化）
+
+### 主要风险
+- 外部验证数据分布偏移导致指标下降。
+- LLM 生成假设可能出现看似合理但不可验证的问题。
+- 生物学验证成本高，需要提前规划最小验证闭环。
+
