@@ -27,7 +27,7 @@ make run-idea
 - 运行 `scripts/daily_report.py` 生成 `reports/YYYY-MM-DD.md`。
 - 运行 `scripts/strong_idea.py` 追加“强化 Idea 模块（实验设计 + 投稿匹配分）”，并输出结构化文件 `reports/ideas/YYYY-MM-DD.json`。
 - 运行 `scripts/daily_project_package.py` 生成每日项目交付包（proposal/manuscript/handoff/READ_FIRST）。
-- 运行 `scripts/send_email.py` 自动发邮件到指定收件箱（含简要正文 + 附件）。
+- 运行 `scripts/send_email.py` 自动发邮件到指定收件箱（含 emoji 简报 + HTML 正文 + 附件）。
 - GitHub Actions 自动提交当天报告与结构化 idea 文件到仓库。
 
 ### 关键文件
@@ -40,6 +40,13 @@ make run-idea
 - Secrets 一键配置脚本：`scripts/setup_github_secrets.sh`
 - 输出目录：`reports/`
 - `Makefile`（统一入口命令）
+
+
+
+### 每日邮件包含内容
+- 简要摘要（带 emoji/图标）
+- HTML 格式简报正文
+- 附件：日报 `.md`、idea `.json`、`survey.md`、`proposal.md`、`venue_assessment.md`、`manuscript_draft.md`、`handoff.html`、`READ_FIRST.md`、`code_plan/README.md`
 
 ### 必要 Secrets（GitHub 仓库 Settings → Secrets and variables → Actions）
 - `GMAIL_SMTP_USER`: Gmail 登录账号（通常同发件邮箱）
