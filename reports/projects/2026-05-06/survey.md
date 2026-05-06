@@ -1,0 +1,103 @@
+# 调研报告（2026-05-06）
+
+## 研究背景
+将多智能体协作用于单细胞机制发现，可显著提升假设生成质量与验证效率。
+
+## 每日调研摘要
+请结合下方自动抓取报告继续补充：
+
+---
+
+# 每日 Bio+AI 自动调研报告（2026-05-06）
+
+> 此报告由 GitHub Actions 每天自动在云端生成。
+
+## AI / LLM / Agent 热点
+
+1. **2026 Roadmap on Artificial Intelligence and Machine Learning for Smart Manufacturing**
+   - 发布时间: Wed, 06 May 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2605.00839
+   - 摘要: arXiv:2605.00839v1 Announce Type: new 
+Abstract: The evolution of artificial intelligence (AI) and machine learning (ML) is reshaping smart manufacturing by providing new capabilities for efficiency, adaptability, and autonomy across industrial value chains. However, the deployme
+2. **AI Agents for Sustainable SMEs: A Green ESG Assessment Framework**
+   - 发布时间: Wed, 06 May 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2605.00841
+   - 摘要: arXiv:2605.00841v1 Announce Type: new 
+Abstract: This study presents a novel, AI-driven framework for assessing Environmental, Social, and Governance (ESG) performance in European small and medium-sized enterprises (SMEs). An initial phase established expert-validated ESG baselin
+3. **Understanding Emergent Misalignment via Feature Superposition Geometry**
+   - 发布时间: Wed, 06 May 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2605.00842
+   - 摘要: arXiv:2605.00842v1 Announce Type: new 
+Abstract: Emergent misalignment, where fine-tuning on narrow, non-harmful tasks induces harmful behaviors, poses a key challenge for AI safety in LLMs. Despite growing empirical evidence, its underlying mechanism remains unclear. To uncover 
+4. **ClinicBot: A Guideline-Grounded Clinical Chatbot with Prioritized Evidence RAG and Verifiable Citations**
+   - 发布时间: Wed, 06 May 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2605.00846
+   - 摘要: arXiv:2605.00846v1 Announce Type: new 
+Abstract: Clinical diagnosis requires answers that are accurate, verifiable, and explicitly grounded in official guidelines. While large language models excel at natural language processing, their tendency to hallucinate undermines their uti
+5. **Accelerating battery research with an AI interface between FINALES and Kadi4Mat**
+   - 发布时间: Wed, 06 May 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2605.00909
+   - 摘要: arXiv:2605.00909v1 Announce Type: new 
+Abstract: The time-consuming formation process critically impacts the longevity of sodium-ion coin cells and End Of Life (EOL) performance. This study aims to optimize formation protocols for duration efficiency, targeting high-performance o
+6. **Effect-Transparent Governance for AI Workflow Architectures: Semantic Preservation, Expressive Minimality, and Decidability Boundaries**
+   - 发布时间: Wed, 06 May 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2605.01030
+   - 摘要: arXiv:2605.01030v2 Announce Type: new 
+Abstract: We present a machine-checked formalization of structurally governed AI workflow architectures and prove that effect-level governance can be imposed without reducing internal computational expressivity. Using Interaction Trees in Ro
+
+## Bio / Bioinformatics 热点
+
+1. **Single-cell Stereo-seq reveals regulatory mechanisms driving regeneration of injured proximal tubules during AKI**
+   - 发布时间: Wed, 6 May 2026 00:00:00 +0000
+   - 链接: https://www.nature.com/articles/s41467-026-72679-z
+2. **On the importance of being powerful to detecting specific regulations in omics studies**
+   - 发布时间: Mon, 4 May 2026 00:00:00 +0000
+   - 链接: https://www.nature.com/articles/s41477-026-02303-x
+3. **SCMBench: benchmarking domain-specific and foundation models for single-cell multi-omics data integration**
+   - 发布时间: Sat, 2 May 2026 00:00:00 +0000
+   - 链接: https://www.nature.com/articles/s41467-026-72570-x
+4. **Spatial-aware detection of copy number alterations from spatial transcriptomics using SpaCNA**
+   - 发布时间: Wed, 29 Apr 2026 00:00:00 +0000
+   - 链接: https://www.nature.com/articles/s41467-026-72284-0
+5. **Pervasive and programmed nucleosome distortion on single chromatin fibres**
+   - 发布时间: Wed, 29 Apr 2026 00:00:00 +0000
+   - 链接: https://www.nature.com/articles/s41586-026-10418-6
+6. **A telomere-to-telomere reference genome for Stemona tuberosa**
+   - 发布时间: Tue, 28 Apr 2026 00:00:00 +0000
+   - 链接: https://www.nature.com/articles/s41597-026-07266-4
+
+## 今日可执行 Idea
+
+- 建议方向：构建 agent 驱动的科研工作流，聚焦 single-cell 场景，并用 agent 提升假设生成质量；短期可在公开 multi-omics 数据上完成可复现实验基线。
+
+## 明日建议跟踪
+
+- 持续监控同主题 3 天内是否升温（重复出现 + 新增代码/数据）。
+- 如果某主题连续升温，自动进入立项池并补充实验计划。
+
+## 强化 Idea 模块（实验设计 + 投稿匹配分）
+
+### 题目
+- 多智能体协作驱动的单细胞机制发现自动化研究框架
+
+### 核心假设
+- 将多智能体协作用于单细胞机制发现，可显著提升假设生成质量与验证效率。
+
+### 实验设计（可执行）
+- 数据：公开数据集 + 1个外部独立验证队列（避免过拟合）。
+- 方法：主方法 vs 单Agent基线 vs 无推理链基线（至少3组对比）。
+- 评估：AUC/F1 + 新靶点命中率 + 人工专家一致性评分。
+- 消融：去除检索模块、去除反馈回路、去除多智能体协作。
+- 复现：固定随机种子、公开配置文件、输出误差条与显著性检验。
+
+### 投稿匹配分（10分制）
+- **NeurIPS**: 9.5 / 10（方法创新+大规模实验）
+- **Nature Biotechnology**: 9.4 / 10（转化医学与产业潜力）
+- **Nature Methods**: 9.3 / 10（高生物学验证）
+- **ICML**: 9.2 / 10（机器学习理论/泛化）
+
+### 主要风险
+- 外部验证数据分布偏移导致指标下降。
+- LLM 生成假设可能出现看似合理但不可验证的问题。
+- 生物学验证成本高，需要提前规划最小验证闭环。
+
