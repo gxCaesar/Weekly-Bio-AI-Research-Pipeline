@@ -1,0 +1,86 @@
+# 调研报告（2026-05-27）
+
+## 研究背景
+将多智能体协作用于单细胞机制发现，可显著提升假设生成质量与验证效率。
+
+## 每日调研摘要
+请结合下方自动抓取报告继续补充：
+
+---
+
+# 每日 Bio+AI 自动调研报告（2026-05-27）
+
+> 此报告由 GitHub Actions 每天自动在云端生成。
+
+## AI / LLM / Agent 热点
+
+1. **BrickAnything: Geometry-Conditioned Buildable Brick Generation with Structure-Aware Tokenization**
+   - 发布时间: Wed, 27 May 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2605.26182
+   - 摘要: arXiv:2605.26182v1 Announce Type: new 
+Abstract: Generating physically buildable brick structures from 3D shapes requires more than geometric reconstruction: the output must also satisfy discrete part constraints and structural stability. Existing brick generation methods either 
+2. **Can LLMs Introspect? A Reality Check**
+   - 发布时间: Wed, 27 May 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2605.26242
+   - 摘要: arXiv:2605.26242v1 Announce Type: new 
+Abstract: Can large language models detect and report their own internal states? A number of studies have argued that the answer to this question is yes. We argue, based on lessons from human metacognition research, that this conclusion may 
+3. **Is Agent Memory a Database? Rethinking Data Foundations for Long-Term AI Agent Memory**
+   - 发布时间: Wed, 27 May 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2605.26252
+   - 摘要: arXiv:2605.26252v1 Announce Type: new 
+Abstract: Long-running AI agents need persistent memory. Memory supports learning across sessions, reduces repeated context injection, and enables auditing of past decisions. Current agent memory systems and database paradigms treat memory a
+4. **Personalizing Embodied Multimodal Large Language Model Agents over Long-term User Interactions**
+   - 发布时间: Wed, 27 May 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2605.26256
+   - 摘要: arXiv:2605.26256v1 Announce Type: new 
+Abstract: Multimodal large language model (MLLM)-based embodied agents have shown strong potential for solving complex tasks in physical environments. However, personalized assistance requires more than following generic instruction or recog
+5. **Constraint acquisition needs better benchmarks**
+   - 发布时间: Wed, 27 May 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2605.26279
+   - 摘要: arXiv:2605.26279v1 Announce Type: new 
+Abstract: Constraint Acquisition (CA) and related research on the validation and enhancement of Mathematical Programming (MP) models from domain knowledge artifacts are currently limited by inadequate benchmarks. This deficiency impedes repr
+6. **Your Agents Are Aging Too: Agent Lifespan Engineering for Deployed Systems**
+   - 发布时间: Wed, 27 May 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2605.26302
+   - 摘要: arXiv:2605.26302v1 Announce Type: new 
+Abstract: Long-lived AI agents are increasingly deployed as persistent operational systems, yet they are still evaluated like freshly initialized models. Day-one benchmarks miss a basic systems question: how long does an agent remain reliabl
+
+## Bio / Bioinformatics 热点
+
+- 暂无可用条目
+
+## 今日可执行 Idea
+
+- 建议方向：构建 agent 驱动的科研工作流，聚焦 single-cell 场景，并用 multimodal 提升假设生成质量；短期可在公开 drug 数据上完成可复现实验基线。
+
+## 明日建议跟踪
+
+- 持续监控同主题 3 天内是否升温（重复出现 + 新增代码/数据）。
+- 如果某主题连续升温，自动进入立项池并补充实验计划。
+
+## 强化 Idea 模块（实验设计 + 投稿匹配分）
+
+### 题目
+- 多智能体协作驱动的单细胞机制发现自动化研究框架
+
+### 核心假设
+- 将多智能体协作用于单细胞机制发现，可显著提升假设生成质量与验证效率。
+
+### 实验设计（可执行）
+- 数据：公开数据集 + 1个外部独立验证队列（避免过拟合）。
+- 方法：主方法 vs 单Agent基线 vs 无推理链基线（至少3组对比）。
+- 评估：AUC/F1 + 新靶点命中率 + 人工专家一致性评分。
+- 消融：去除检索模块、去除反馈回路、去除多智能体协作。
+- 复现：固定随机种子、公开配置文件、输出误差条与显著性检验。
+
+### 投稿匹配分（10分制）
+- **NeurIPS**: 9.3 / 10（方法创新+大规模实验）
+- **Nature Biotechnology**: 9.2 / 10（转化医学与产业潜力）
+- **Nature Methods**: 9.1 / 10（高生物学验证）
+- **ICML**: 9.0 / 10（机器学习理论/泛化）
+
+### 主要风险
+- 外部验证数据分布偏移导致指标下降。
+- LLM 生成假设可能出现看似合理但不可验证的问题。
+- 生物学验证成本高，需要提前规划最小验证闭环。
+
