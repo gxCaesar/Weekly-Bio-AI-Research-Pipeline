@@ -1,0 +1,86 @@
+# 调研报告（2026-05-29）
+
+## 研究背景
+将多智能体协作用于单细胞机制发现，可显著提升假设生成质量与验证效率。
+
+## 每日调研摘要
+请结合下方自动抓取报告继续补充：
+
+---
+
+# 每日 Bio+AI 自动调研报告（2026-05-29）
+
+> 此报告由 GitHub Actions 每天自动在云端生成。
+
+## AI / LLM / Agent 热点
+
+1. **Behavior-Induced Mirror-Prox Temporal-Difference Learning for Faster Off-Policy Prediction**
+   - 发布时间: Fri, 29 May 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2605.28849
+   - 摘要: arXiv:2605.28849v1 Announce Type: new 
+Abstract: Gradient temporal-difference methods provide stable off-policy prediction with linear function approximation, but their practical performance is strongly affected by the geometry induced by the auxiliary-variable metric. Existing M
+2. **Behavior-Aware Auxiliary Corrections for Off-Policy Temporal-Difference Prediction**
+   - 发布时间: Fri, 29 May 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2605.28855
+   - 摘要: arXiv:2605.28855v1 Announce Type: new 
+Abstract: Temporal-difference learning with function approximation can be unstable under off-policy sampling. TDC stabilizes off-policy TD through an auxiliary covariance correction, and TDRC further regularizes this correction in a single-t
+3. **The Cognitive Categorical Transformer: Category-Theoretic Inductive Biases for Language Modeling**
+   - 发布时间: Fri, 29 May 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2605.28864
+   - 摘要: arXiv:2605.28864v1 Announce Type: new 
+Abstract: The Cognitive Categorical Transformer (CCT) is a 306M-parameter architecture that augments a pretrained GPT-2 Small backbone with cognitively grounded components derived from category theory and several inspirations from cognitive 
+4. **Ultra-Reduced-Impact-Encased-Logging (URIEL): propose a new method for selective sustainable logging and post-harvest silvicultural treatment in tropical forest using airborne robotics systems**
+   - 发布时间: Fri, 29 May 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2605.28883
+   - 摘要: arXiv:2605.28883v1 Announce Type: new 
+Abstract: Tropical forests worldwide are under intense deforestation pressure driven by economic and political interests, and scientific evidence suggests this deforestation contributes to climate change. This paper proposes a novel logging 
+5. **Review Arcade: On the Human Alignment and Gameability of LLM Reviews**
+   - 发布时间: Fri, 29 May 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2605.28897
+   - 摘要: arXiv:2605.28897v1 Announce Type: new 
+Abstract: LLM-generated reviews for scientific papers are gaining considerable traction and are even being officially piloted by major conferences. We have to assume that not only reviewers are using LLM-assistance, but also that authors use
+6. **Orthogonal Concept Erasure for Diffusion Models**
+   - 发布时间: Fri, 29 May 2026 00:00:00 -0400
+   - 链接: https://arxiv.org/abs/2605.28902
+   - 摘要: arXiv:2605.28902v1 Announce Type: new 
+Abstract: Concept erasure has emerged as a promising approach to mitigate undesired or unsafe content in diffusion models, yet existing methods still face significant limitations. While training-based methods are effective, their high comput
+
+## Bio / Bioinformatics 热点
+
+- 暂无可用条目
+
+## 今日可执行 Idea
+
+- 建议方向：构建 diffusion 驱动的科研工作流，聚焦 single-cell 场景，并用 transformer 提升假设生成质量；短期可在公开 drug 数据上完成可复现实验基线。
+
+## 明日建议跟踪
+
+- 持续监控同主题 3 天内是否升温（重复出现 + 新增代码/数据）。
+- 如果某主题连续升温，自动进入立项池并补充实验计划。
+
+## 强化 Idea 模块（实验设计 + 投稿匹配分）
+
+### 题目
+- 多智能体协作驱动的单细胞机制发现自动化研究框架
+
+### 核心假设
+- 将多智能体协作用于单细胞机制发现，可显著提升假设生成质量与验证效率。
+
+### 实验设计（可执行）
+- 数据：公开数据集 + 1个外部独立验证队列（避免过拟合）。
+- 方法：主方法 vs 单Agent基线 vs 无推理链基线（至少3组对比）。
+- 评估：AUC/F1 + 新靶点命中率 + 人工专家一致性评分。
+- 消融：去除检索模块、去除反馈回路、去除多智能体协作。
+- 复现：固定随机种子、公开配置文件、输出误差条与显著性检验。
+
+### 投稿匹配分（10分制）
+- **NeurIPS**: 9.3 / 10（方法创新+大规模实验）
+- **Nature Biotechnology**: 9.2 / 10（转化医学与产业潜力）
+- **Nature Methods**: 9.1 / 10（高生物学验证）
+- **ICML**: 9.0 / 10（机器学习理论/泛化）
+
+### 主要风险
+- 外部验证数据分布偏移导致指标下降。
+- LLM 生成假设可能出现看似合理但不可验证的问题。
+- 生物学验证成本高，需要提前规划最小验证闭环。
+
